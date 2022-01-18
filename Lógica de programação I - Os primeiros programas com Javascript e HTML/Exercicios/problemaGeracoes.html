@@ -4,29 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>programa</title>
+    <title>Problema das Gerações</title>
 </head>
 <body>
-
     <script>
-
         function pulaLinha() {
-            document.write("<br> <br>");
+            document.write("<br>");
         }
 
         function mostra(frase) {
             document.write(frase);
             pulaLinha();
-        } 
+        }
 
-        var ano = 2016;
-        mostra("Flávio tem " + (ano - 1977) + " anos");
-        
-        mostra("Joaquim tem " + (ano - 1996) + " anos");
-        
-        ano = 2017;
-        mostra("Barney tem " + (ano - 1976) + " anos");
-     
+        var idadeMediaQuandoTemFilhos = 28;
+        var anoAtual = 2016; 
+
+        var quantidadeDeGeracoes = (anoAtual - 1500) / idadeMediaQuandoTemFilhos;
+
+        mostra(quantidadeDeGeracoes);
     </script>
 </body>
 </html>
