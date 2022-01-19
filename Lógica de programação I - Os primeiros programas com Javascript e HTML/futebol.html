@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol</title>
+</head>
+<body>
+    <script>
+
+        function pulaLinha() {
+    
+            document.write("<br>");
+            document.write("<br>");
+        }
+    
+        function mostra(frase) {
+    
+            document.write(frase);
+            pulaLinha();
+    
+        }
+    
+        //O prompt retorna sempre uma string, usa-se parseInt() para converter de string para numero
+        var vitorias = parseInt(prompt("Entre com o número de vitorias."));
+        var empates = parseInt(prompt("Entre com o número de empates."));
+        var pontos = vitorias * 3 + empates;
+
+        mostra("Os pontos do seu time é: " + pontos);
+
+        if(pontos > 28)
+        {
+            mostra("Seu time está melhor que o ano passado.");
+        }
+        if (pontos < 28) {
+            mostra("Seu time está pior que o ano passado.");
+        } else {
+            mostra("Seu time está pior que o ano passado.");
+        }
+
+        mostra("Fim!")
+        
+        
+    </script>
+</body>
+</html>
