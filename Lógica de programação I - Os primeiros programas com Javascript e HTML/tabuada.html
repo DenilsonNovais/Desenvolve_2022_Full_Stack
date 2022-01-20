@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabuada</title>
+</head>
+<body>
+    <h2>Tabuada</h2>
+    <script>
+        function pulaLinha() {
+            document.write("<br> <br>");
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        // Tabuada com while
+        var mutiplicador = 1;
+        var numero = parseInt(prompt("Digite o número da tabuada que quer calcular"));
+
+        while(mutiplicador <= 10) {
+            mostra(numero * mutiplicador);
+            mutiplicador++;
+        }
+
+        mostra("Fim");
+
+        // Tabuada com for
+        // var numero = parseInt(prompt("Digite o número da tabuada que quer calcular"));
+
+        // variavel + Condição + Incremento
+        for(var mutiplicador = 1; mutiplicador <= 10; mutiplicador++) {
+            mostra(numero * mutiplicador);
+        }
+        mostra("Fim");
+
+
+    </script>
+</body>
+</html>

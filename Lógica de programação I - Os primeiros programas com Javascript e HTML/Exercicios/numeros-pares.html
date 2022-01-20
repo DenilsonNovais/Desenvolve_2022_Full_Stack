@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros pares</title>
+</head>
+<body>
+    <h3>Imprimir todos os números pares de 1 a 100</h3>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        var numeroFim = 100;
+        var numerInicio = 2;
+
+        while(numerInicio <= numeroFim) {
+            mostra(numerInicio);
+            numerInicio = numerInicio + 2;
+        }
+
+        mostra("Fim");
+
+        
+
+        function pulaLinha() {
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+
+        var contador = 30;
+
+        while(contador <= 40) {
+
+            if( contador == 33 ) {
+            contador = contador + 1;
+            }
+            if(contador == 37) {    
+                contador = contador + 1;
+            }
+            else {
+            mostra(contador);
+            contador = contador + 1; 
+            }
+        }
+
+            mostra("FIM");
+
+
+
+    </script>
+</body>
+</html>
