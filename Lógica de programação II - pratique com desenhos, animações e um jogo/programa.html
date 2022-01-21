@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa</title>
+    
+</head>
+<body>
+
+    <canvas width="600px" height="400px"></canvas>
+
+    <script>
+        
+        // Seleciona a tag no mundo html e traz para o mundo javascript
+        var tela = document.querySelector('canvas');
+        
+        // Utilizando o retorno tá tag, informa o contexto em que será desenhado na tela 
+        var pincel = tela.getContext('2d');
+
+        // Adicionando um estilo de cor no java script para a tela
+        pincel.fillStyle = 'lightgray';
+
+        // Desenhar um retangulo do tamanho da tela, usando cordenadas x e y
+        pincel.fillRect(0, 0, 600, 400);
+
+        pincel.fillStyle = 'green';
+        pincel.fillRect(0, 0, 200, 400);
+
+        pincel.fillStyle = 'red';
+        pincel.fillRect(400, 0, 600, 400);
+
+        pincel.fillStyle = 'yellow';
+        // Inicia um caminho
+        pincel.beginPath();
+        // Desenhando um caminho, passando os potos das cordenadas
+        pincel.moveTo(300, 200);
+        pincel.lineTo(200, 400);
+        pincel.lineTo(400, 400);
+        // Preencha dentro das marcações
+        pincel.fill();
+
+        pincel.fillStyle = 'blue';
+        //Inicia outro caminho 
+        pincel.beginPath();
+        // Função arc pra tracar o circulo
+        pincel.arc(300, 200, 50, 0, 2 * 3.14);
+        pincel.fill();
+
+        
+
+    </script>
+</body>
+</html>
