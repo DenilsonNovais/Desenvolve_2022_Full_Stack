@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita</title>
+</head>
+<body>
+    <h2>Receita sem ingredientes repetidos</h2>
+
+    <script>
+
+        var ingredientes = [];
+
+        var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+        var contador = 1;
+
+        while( contador <= quantidade) {
+
+            var ingrediente = prompt("Informe o ingrediente " + contador);
+
+            var existe = false;
+
+            for( var posicao = 0; posicao < ingredientes.length; posicao++) {
+
+                if( ingredientes[posicao] == ingrediente) {
+
+                    existe = true;
+                    break;
+                }
+            }
+
+            if( existe == false) {
+
+                ingredientes.push(ingrediente);
+                contador++;
+            }
+        
+        }
+
+        console.log(ingredientes);
+        document.write(ingredientes);
+
+    </script>
+</body>
+</html>
