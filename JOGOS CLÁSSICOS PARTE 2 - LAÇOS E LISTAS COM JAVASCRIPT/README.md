@@ -7,12 +7,4 @@
 
     O Jogo que fiz a partir do curso pode ser acessado pelo o link abaixo.
 
-    <https://editor.p5js.org/Denilson_Novais/full/TchQTpsTv>
-
-    
-
-
-
-    
-
-
+    < https://editor.p5js.org/Denilson_Novais/full/TchQTpsTv > 
