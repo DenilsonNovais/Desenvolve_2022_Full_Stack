@@ -11,3 +11,6 @@
       Entenda as limitações do seu computador para criar soluções mais efetivas;
       Veja como os dados do seu programa são armazenados na memória.
 
+      Anexado um resumo do curso em PDF, by Guilherme Silveira da trilha Full
+      Stack do Programa Desenvolve 2022 - Grupo Boticário.
+
