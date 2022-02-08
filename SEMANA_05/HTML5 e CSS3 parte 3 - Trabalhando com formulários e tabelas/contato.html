@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contatos</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="produtos.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -25,7 +25,37 @@
     </header>
 
     <main>
+        <form>
+            <label for="nome">Nome e Sobrenome</label>
+            <input type="text" id="nome">
 
+            <label for="email">Email</label>
+            <input type="email" id="email">
+
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone">
+
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+
+            <section>
+                <p>Como prefere o nosso contato?</p>
+                <label for="radio-email">Email</label>
+                <input type="radio" name="contato" value="email" id="radio-email">
+
+                <label for="radio-telefone">Telefone</label>
+                <input type="radio" name="contato" value="telefone" id="radio-telefone">
+
+                <label for="radio-whatsapp">WhatsApp</label>
+                <input type="radio" name="contato" value="whatsapp" id="radio-whatsapp">
+            </section>
+
+            <label><input type="checkbox">Gostaria de receber nossas novidades por email?</label>
+
+            <input type="submit" value="Enviar Formulário">
+
+
+        </form>
     </main>
 
     <footer>
