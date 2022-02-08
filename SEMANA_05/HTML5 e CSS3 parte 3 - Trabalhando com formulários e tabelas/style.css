@@ -101,15 +101,57 @@ form {
     margin: 40px 0;
 }
 
-form label {
+form label, form legend {
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
 }
 
-form input {
+.input-padrao {
     display: block;
     margin:0 0 20px;
     padding: 10px 25px;
     width: 50%;
+}
+
+.checkbox, select > legend {
+    margin: 20px 0;
+}
+
+#enviar {
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border:none;
+    border-radius: 6px;
+    transition: 1s all;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.418);
+}
+
+#enviar:hover {
+    background-color: darkorange;
+    transform: scale(1.2);
+}
+
+#enviar:active {
+    background-color: #00000067;
+}
+
+table {
+    margin: 20px 0 40px;
+}
+
+thead {
+    background-color: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 8px 15px;
 }
