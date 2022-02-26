@@ -8,8 +8,6 @@ let nota4 = 7.5;
 
 let media = (nota1 + nota2 + nota3 + nota4) / 4; */
 
-// console.log(media);
-
 // Declaração com Arrays
 
 const notas = [10, 6.5, 8, 7.5];
