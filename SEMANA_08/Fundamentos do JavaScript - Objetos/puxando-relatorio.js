@@ -27,8 +27,9 @@ const cliente = {
 
 let relatorio = "";
 
+// O método for in percorre o objeto pela string da chave
 for (let info in cliente) {
-    if (typeof cliente[info] === "Object" || typeof cliente[info] === "function") {
+    if (typeof cliente[info] === "object" || typeof cliente[info] === "function") {
         continue;
     }
     else {
