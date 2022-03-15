@@ -4,10 +4,20 @@
 
 // Exportando a configuração para o app
 const customExpress = require('./config/customExpress');
+const conexao = require('./infraestrutura/conexao');
 
-// Execultando a função customExpress no app
-const app = customExpress();
+conexao.conect(erro => {
+    if (erro) {
+        console.log(erro);
+    }else {
+        console.log('conectado com sucesso')
+
+        // Execultando a função customExpress no app
+        const app = customExpress();
+
+        app.listen(3000, () => console.log('servidor rodando na porta 3000'))
+    }
+});
 
 
-app.listen(3000, () => console.log('servidor rodando na porta 3000'));
 
