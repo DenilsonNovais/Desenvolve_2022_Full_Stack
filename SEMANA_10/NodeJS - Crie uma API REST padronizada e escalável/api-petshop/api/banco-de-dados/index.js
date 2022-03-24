@@ -1,0 +1,16 @@
+// Comunicação com banco
+const Sequelize = require('sequelize');
+const config = require('config');
+
+const instancia = new Sequelize(
+    config.get('mysql.banco-de-dados'),
+    config.get('mysql.usuario'),
+    config.get('mysql.sanha'),
+    {
+        host: config.get('mysql.host'),
+        dialect: 'mysql'
+    }
+)
+
+// Exportando a instancia do Sequeliza
+module.exports = instancia
