@@ -1,13 +1,16 @@
-// Criando api da rota de fornecedores
 const roteador = require('express').Router()
 const TabelaFornecedor = require('./TabelaFornecedor')
 const Fornecedor = require('./Fornecedor')
+const SerializadorFornecedor = require('../../Serializador').SerializadorFornecedor
 
 roteador.get('/', async (requisicao, resposta) => {
     const resultados = await TabelaFornecedor.listar()
     resposta.status(200)
+    const serializador = new SerializadorFornecedor(
+        resposta.getHeader('Content-Type')
+    )
     resposta.send(
-        JSON.stringify(resultados)
+        serializador.serializar(resultados)
     )
 })
 
@@ -17,8 +20,11 @@ roteador.post('/', async (requisicao, resposta, proximo) => {
         const fornecedor = new Fornecedor(dadosRecebidos)
         await fornecedor.criar()
         resposta.status(201)
+        const serializador = new SerializadorFornecedor(
+            resposta.getHeader('Content-Type')
+        )
         resposta.send(
-            JSON.stringify(fornecedor)
+            serializador.serializar(fornecedor)
         )
     } catch (erro) {
         proximo(erro)
@@ -31,8 +37,11 @@ roteador.get('/:idFornecedor', async (requisicao, resposta, proximo) => {
         const fornecedor = new Fornecedor({ id: id })
         await fornecedor.carregar()
         resposta.status(200)
+        const serializador = new SerializadorFornecedor(
+            resposta.getHeader('Content-Type')
+        )
         resposta.send(
-            JSON.stringify(fornecedor)
+            serializador.serializar(fornecedor)
         )
     } catch (erro) {
         proximo(erro)
