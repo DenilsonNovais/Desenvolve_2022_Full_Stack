@@ -7,6 +7,7 @@ const CampoInvalido = require('./erros/CampoInvalido')
 const DadosNaoFornecidos = require('./erros/DadosNaoFornecidos')
 const ValorNaoSuportado = require('./erros/ValorNaoSuportado')
 const formatosAceitos = require('./Serializador').formatosAceitos
+const SerializadorErro = require('./Serializador').SerializadorErro
 
 app.use(bodyParser.json());// Declara o json como formato a ser utilizado pela api
 
@@ -27,7 +28,7 @@ app.use((requisicao, resposta, proximo) => {
     proximo()
 })
 
-const roteador = require('./rotas/fornecedores');
+const roteador = require('./rotas/fornecedores')
 app.use('/api/fornecedores', roteador);// consumindo api de rotas dentro da api principal
 
 app.use((erro, requisicao, resposta, proximo) => {
@@ -45,9 +46,12 @@ app.use((erro, requisicao, resposta, proximo) => {
         status = 406
     }
 
+    const serializador = new SerializadorErro(
+        resposta.getHeader('Content-Type')
+    )
     resposta.status(status)
     resposta.send(
-        JSON.stringify({
+        serializador.serializar({
             mensagem: erro.message,
             id: erro.idErro
         })
@@ -55,4 +59,4 @@ app.use((erro, requisicao, resposta, proximo) => {
 })
 
 // A API esculta uma porta por onde recebe as requisições
-app.listen(config.get('api.porta'), () => console.log('A API está funcionando'));
+app.listen(config.get('api.porta'), () => console.log('A API está funcionando!'));
