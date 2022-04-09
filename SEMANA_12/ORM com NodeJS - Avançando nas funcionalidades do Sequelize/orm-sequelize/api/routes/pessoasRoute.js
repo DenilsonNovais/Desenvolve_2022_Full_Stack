@@ -6,7 +6,8 @@ const PessoaController = require('../controllers/PessoaController');
 const router = Router();
 router
     // Rotas de Pessoas
-    .get('/pessoas', PessoaController.pegaTodasAsPessoas)// Verbo Get - Pegar/Consultar
+    .get('/pessoas', PessoaController.pegaPessoasAtivas)
+    .get('/pessoas/todos', PessoaController.pegaTodasAsPessoas)// Verbo Get - Pegar/Consultar
     .get('/pessoas/:id', PessoaController.pegaUmaPessoa)
     .post('/pessoas', PessoaController.criarPessoa) // Verbo Post - Criar/Adicionar
     .post('/pessoas/:id/restaura', PessoaController.restauraPessoa)// Restaura pessoas
