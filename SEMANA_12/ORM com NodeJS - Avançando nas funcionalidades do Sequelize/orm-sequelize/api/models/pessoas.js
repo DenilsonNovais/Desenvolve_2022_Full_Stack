@@ -1,37 +1,43 @@
-'use strict';
+'use strict'
 module.exports = (sequelize, DataTypes) => {
-  //Objeto Atributos 
-  const Pessoas = sequelize.define('Pessoas', { 
-    nome: DataTypes.STRING,
+  const Pessoas = sequelize.define('Pessoas', {
+    nome: {
+      type: DataTypes.STRING,
+      validate: {
+        funcaoValidadora: function(dado) {
+          if (dado.length < 3) throw new Error('o campo nome deve ter mais de 3 caracteres')
+        }
+      }
+    },
     ativo: DataTypes.BOOLEAN,
     email: {
       type: DataTypes.STRING,
       validate: {
         isEmail: {
           args: true,
-          msg: 'Dado do tipo e-mail inválido'
+          msg: 'dado do tipo e-mail inválido'
         }
       }
     },
     role: DataTypes.STRING
-  }, { // Objeto de opções
-    paranoid: true, //Exclusão suave
-    defaultScope: { //Get apenas em Pessoas Ativas no banco
-      where: { ativo: true}
-    },
+  }, { 
+    paranoid: true,
+    defaultScope: {
+      where: { ativo: true }
+    },  
     scopes: {
-      todos: {where: {}},
-      // etc: {constraint: valor}
+      todos: { where: {} },
     }
-  }); 
+  })
   Pessoas.associate = function(models) {
     Pessoas.hasMany(models.Turmas, {
       foreignKey: 'docente_id'
     }) 
     Pessoas.hasMany(models.Matriculas, {
-      foreignKey: 'estudante_id'
+      foreignKey: 'estudante_id',
+      scope: { status: 'confirmado' },
+      as: 'aulasMatriculadas'
     })
-
-  };
-  return Pessoas;
-};
+  }
+  return Pessoas
+}
